@@ -19,6 +19,8 @@ export default function ActionsPage() {
     );
   }
 
+  const results = currentResults;
+
   const toggle = (i: number) => setChecked(prev => prev.map((v, idx) => idx === i ? !v : v));
   const doneCount = checked.filter(Boolean).length;
 
@@ -27,7 +29,7 @@ export default function ActionsPage() {
       'ACTION PLAN — AI Entrepreneur Copilot',
       '======================================',
       '',
-      ...currentResults.actions.map((a, i) => [
+      ...results.actions.map((a, i) => [
         `${checked[i] ? '✅' : '⬜'} Action ${i + 1}: ${a.action}`,
         `   Why: ${a.why}`,
         `   When: ${a.timeframe}`,

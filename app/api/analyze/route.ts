@@ -74,7 +74,6 @@ ${data}
 
     const text = response.choices[0]?.message?.content || '';
 
-    // Clean up any accidental markdown wrapping
     const cleaned = text
       .replace(/```json/gi, '')
       .replace(/```/g, '')
